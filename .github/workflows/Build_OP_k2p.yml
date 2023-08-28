@@ -59,12 +59,10 @@ jobs:
     - name: Clone source code
       env: 
         REPO_URL: https://github.com/fanqiein/openwrt
-        REPO_BRANCH: openwrt-22.03
+        REPO_BRANCH: openwrt-23.05
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
-        git tag
-        git checkout v23.05.0
         echo "src-git ssrp https://github.com/fw876/helloworld.git" >> ./feeds.conf.default
 
     - name: Update & Install feeds
